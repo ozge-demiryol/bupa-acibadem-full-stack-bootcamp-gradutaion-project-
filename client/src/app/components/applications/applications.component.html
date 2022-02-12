@@ -1,0 +1,24 @@
+<div class="search-area">
+  <i class="search-icon" nz-icon nzType="search" nzTheme="outline"></i>
+  <input type="text" class="searchbox">
+</div>
+<table class="table">
+  <thead>
+    <tr class="table-head">
+      <th>TC Kimlik No</th>
+      <th>Ad</th>
+      <th>Soyad</th>
+      <th>Ödeme Yöntemi</th>
+      <th>Başvuru Durumu</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let x of applications">
+      <td>{{x.identityNo}}</td>
+      <td>{{x.name}}</td>
+      <td>{{x.surname}}</td>
+      <td>{{x.title}}</td>
+      <td>{{x.status}}</td>
+    </tr>
+  </tbody>
+</table>

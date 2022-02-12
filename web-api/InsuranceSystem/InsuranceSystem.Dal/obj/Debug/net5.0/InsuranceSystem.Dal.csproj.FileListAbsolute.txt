@@ -1,0 +1,15 @@
+C:\Users\user\Desktop\bupa-acibadem-full-stack-bootcamp\bupa-acibadem-full-stack-bootcamp-gradutaion-project\web-api\InsuranceSystem\InsuranceSystem.Dal\bin\Debug\net5.0\InsuranceSystem.Dal.deps.json
+C:\Users\user\Desktop\bupa-acibadem-full-stack-bootcamp\bupa-acibadem-full-stack-bootcamp-gradutaion-project\web-api\InsuranceSystem\InsuranceSystem.Dal\bin\Debug\net5.0\InsuranceSystem.Dal.dll
+C:\Users\user\Desktop\bupa-acibadem-full-stack-bootcamp\bupa-acibadem-full-stack-bootcamp-gradutaion-project\web-api\InsuranceSystem\InsuranceSystem.Dal\bin\Debug\net5.0\ref\InsuranceSystem.Dal.dll
+C:\Users\user\Desktop\bupa-acibadem-full-stack-bootcamp\bupa-acibadem-full-stack-bootcamp-gradutaion-project\web-api\InsuranceSystem\InsuranceSystem.Dal\bin\Debug\net5.0\InsuranceSystem.Dal.pdb
+C:\Users\user\Desktop\bupa-acibadem-full-stack-bootcamp\bupa-acibadem-full-stack-bootcamp-gradutaion-project\web-api\InsuranceSystem\InsuranceSystem.Dal\bin\Debug\net5.0\InsuranceSystem.Entity.dll
+C:\Users\user\Desktop\bupa-acibadem-full-stack-bootcamp\bupa-acibadem-full-stack-bootcamp-gradutaion-project\web-api\InsuranceSystem\InsuranceSystem.Dal\bin\Debug\net5.0\InsuranceSystem.Entity.pdb
+C:\Users\user\Desktop\bupa-acibadem-full-stack-bootcamp\bupa-acibadem-full-stack-bootcamp-gradutaion-project\web-api\InsuranceSystem\InsuranceSystem.Dal\obj\Debug\net5.0\InsuranceSystem.Dal.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\bupa-acibadem-full-stack-bootcamp\bupa-acibadem-full-stack-bootcamp-gradutaion-project\web-api\InsuranceSystem\InsuranceSystem.Dal\obj\Debug\net5.0\InsuranceSystem.Dal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\bupa-acibadem-full-stack-bootcamp\bupa-acibadem-full-stack-bootcamp-gradutaion-project\web-api\InsuranceSystem\InsuranceSystem.Dal\obj\Debug\net5.0\InsuranceSystem.Dal.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\bupa-acibadem-full-stack-bootcamp\bupa-acibadem-full-stack-bootcamp-gradutaion-project\web-api\InsuranceSystem\InsuranceSystem.Dal\obj\Debug\net5.0\InsuranceSystem.Dal.AssemblyInfo.cs
+C:\Users\user\Desktop\bupa-acibadem-full-stack-bootcamp\bupa-acibadem-full-stack-bootcamp-gradutaion-project\web-api\InsuranceSystem\InsuranceSystem.Dal\obj\Debug\net5.0\InsuranceSystem.Dal.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\bupa-acibadem-full-stack-bootcamp\bupa-acibadem-full-stack-bootcamp-gradutaion-project\web-api\InsuranceSystem\InsuranceSystem.Dal\obj\Debug\net5.0\InsuranceSystem.Dal.csproj.CopyComplete
+C:\Users\user\Desktop\bupa-acibadem-full-stack-bootcamp\bupa-acibadem-full-stack-bootcamp-gradutaion-project\web-api\InsuranceSystem\InsuranceSystem.Dal\obj\Debug\net5.0\InsuranceSystem.Dal.dll
+C:\Users\user\Desktop\bupa-acibadem-full-stack-bootcamp\bupa-acibadem-full-stack-bootcamp-gradutaion-project\web-api\InsuranceSystem\InsuranceSystem.Dal\obj\Debug\net5.0\ref\InsuranceSystem.Dal.dll
+C:\Users\user\Desktop\bupa-acibadem-full-stack-bootcamp\bupa-acibadem-full-stack-bootcamp-gradutaion-project\web-api\InsuranceSystem\InsuranceSystem.Dal\obj\Debug\net5.0\InsuranceSystem.Dal.pdb

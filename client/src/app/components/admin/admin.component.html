@@ -1,0 +1,74 @@
+<app-applications></app-applications>
+    <div class="content-area">
+      <i class="delete-icon" nz-icon nzType="delete" nzTheme="outline"></i>
+      <!--Tablo-->
+      <!--<p-table #applicationTable [value]="applications" dataKey="id" [rows]="10" [showCurrentPageReport]="true"
+        [rowsPerPageOptions]="[10,25,50]" styleClass="p-datatable-gridlines" [paginator]="true"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+        <ng-template pTemplate="caption">
+          <div class="flex searchbox">
+            <span class="p-input-icon-left ml-auto">
+              <i class="pi pi-search"></i>
+              <input pInputText type="text" (input)="applicationTable.filterGlobal($event.target, 'contains')"
+                placeholder="Ara..." />
+            </span>
+          </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+          <tr>
+            <th>
+              <div class="flex justify-content-center align-items-center">
+                TC Kimlik No
+              </div>
+            </th>
+            <th>
+              <div class="flex justify-content-center align-items-center">
+                Ad
+              </div>
+            </th>
+            <th>
+              <div class="flex justify-content-center align-items-center">
+                Soyad
+              </div>
+            </th>
+            <th>
+              <div class="flex justify-content-center align-items-center">
+                Ödeme Türü
+              </div>
+            </th>
+            <th>
+              <div class="flex justify-content-center align-items-center">
+                Başvuru Durumu
+              </div>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-applications>
+          <tr>
+            <td>
+              {{applications.identityNo}}
+            </td>
+            <td>
+              {{applications.name}}
+            </td>
+            <td>
+              {{applications.surname}}
+            </td>
+            <td>
+              {{applications.title}}
+            </td>
+            <td>
+              {{applications.status}}
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td colspan="7">No customers found.</td>
+          </tr>
+        </ng-template>
+      </p-table>-->
+
+    </div>
+  <!--</main>-->
+
