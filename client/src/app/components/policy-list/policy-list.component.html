@@ -1,0 +1,27 @@
+<aside class="container">
+<app-sidebar></app-sidebar>
+<table class="table">
+  <thead>
+    <tr class="table-head">
+      <th>TC Kimlik No</th>
+      <th>Ad</th>
+      <th>Soyad</th>
+      <th>Poliçe</th>
+      <th>Satın Alma Tarihi</th>
+      <th>Ödeme Türü</th>
+      <th>Prim</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let x of customersStatus">
+      <td>{{x.identityNo}}</td>
+      <td>{{x.name}}</td>
+      <td>{{x.surname}}</td>
+      <td>{{x.title}}</td>
+      <td>{{x.createdAt | date}}</td>
+      <td>{{x.paymentType}}</td>
+      <td>{{x.price}}</td>
+    </tr>
+  </tbody>
+</table>
+</aside>

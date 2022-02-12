@@ -5,28 +5,41 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FormsModule } from '@angular/forms';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
-/*import { DropdownModule } from 'primeng/dropdown';
-import {TableModule} from 'primeng/table';
-import {ButtonModule} from 'primeng/button';*/
+import { ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminComponent } from './components/admin/admin.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ApplicationsComponent } from './components/applications/applications.component';
-import { CustomersComponent } from './customers/customers.component';
+import { CustomerHomeComponent } from './components/customer-home/customer-home.component';
+import { BuyPolicyComponent } from './components/buy-policy/buy-policy.component';
+import { AdministrationScreenModule } from './administration-screen/administration-screen.module';
+import { CustomerScreenRoutingModule } from './customer-screen/customer-screen-routing.module';
+import { PolicyListComponent } from './components/policy-list/policy-list.component';
+import { AdminHomeComponent } from './components/admin-home/admin-home.component';
+import { CustomerslistComponent } from './components/customerslist/customerslist.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, AdminComponent, SidebarComponent, ApplicationsComponent, CustomersComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    AdminComponent,
+    SidebarComponent,
+    ApplicationsComponent,
+    CustomerHomeComponent,
+    BuyPolicyComponent,
+    PolicyListComponent,
+    AdminHomeComponent,
+    CustomerslistComponent
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    //DropdownModule,
-    FormsModule,
-    FontAwesomeModule
-    //TableModule,
-    //ButtonModule
+    AdministrationScreenModule,
+    CustomerScreenRoutingModule,
+    ReactiveFormsModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

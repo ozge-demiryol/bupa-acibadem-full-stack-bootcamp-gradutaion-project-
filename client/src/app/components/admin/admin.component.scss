@@ -7,16 +7,16 @@ $shadow__input: #5f9ef7;
 $font-dark: #031d3f;
 $font-light: #f6f9fe;
 
-.main-container {
-  flex: 4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  background-color: white;
-  min-height: 85vh;
-  border-radius: $border-radius;
-  margin-right: 3rem;
+// .main-container {
+//   flex: 4;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: flex-start;
+//   background-color: white;
+//   min-height: 85vh;
+//   border-radius: $border-radius;
+//   margin-right: 3rem;
 
   div.search-area {
     width: 50%;
@@ -48,6 +48,7 @@ $font-light: #f6f9fe;
     }
   }
   div.content-area {
+    background-color: white;
     table {
       border-collapse: collapse;
       width: 100%;
@@ -75,4 +76,4 @@ $font-light: #f6f9fe;
       justify-content: center;
     }
   }
-}
+// }

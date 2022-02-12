@@ -1,14 +1,33 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ApplicationsComponent } from './components/applications/applications.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { CustomerHomeComponent } from './components/customer-home/customer-home.component';
 
 const routes: Routes = [
-/*{path:'/basvurular', component:ApplicationsComponent}*/
-
+ {
+    path:'',
+    component:CustomerHomeComponent
+  },
+  {
+    path: '',
+    component: AdminComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '/mudurluk',
+        pathMatch: 'full',
+      },
+      {
+        path: 'mudurluk',
+        loadChildren: () =>
+          import('./administration-screen/administration-screen.module').then(m => m.AdministrationScreenModule),
+      },
+    ]
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

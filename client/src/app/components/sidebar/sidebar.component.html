@@ -1,21 +1,29 @@
-<div class="panel-navigation">
-  <h3>Dashboard</h3>
-  <hr />
-  <a href="">
-    <div class="panel-icons">
-      <fa-icon [icon]="applyIcon"></fa-icon>
-      Başvurular
-    </div>
-  </a>
-  <a href="">
-    <div class="panel-icons">
-      <fa-icon [icon]="userIcon"></fa-icon>Müşteriler
-    </div>
-  </a>
-  <a href="">
-    <div class="panel-icons">
-    <fa-icon [icon]="policyIcon"></fa-icon>
-    Poliçeler
+<div class=" panel-container">
+  <div class="panel-navigation">
+    <h3>Dashboard</h3>
+    <hr />
+    <a href="/mudurluk/">
+      <div class="panel-icons">
+        <fa-icon [icon]="applyIcon"></fa-icon>
+        Ana Sayfa
+      </div>
+    </a>
+    <a href="/mudurluk/basvurular">
+      <div class="panel-icons">
+        <fa-icon [icon]="applyIcon"></fa-icon>
+        Başvurular
+      </div>
+    </a>
+    <a href="/mudurluk/musteriler">
+      <div class="panel-icons">
+        <fa-icon [icon]="userIcon"></fa-icon>Müşteriler
+      </div>
+    </a>
+    <a href="/mudurluk/policeler">
+      <div class="panel-icons">
+        <fa-icon [icon]="policyIcon"></fa-icon>
+        Poliçeler
+      </div>
+    </a>
   </div>
-  </a>
 </div>

@@ -11,6 +11,9 @@ client/node_modules
 npm-debug.log
 yarn-error.log
 
+#Angular
+
+
 # IDEs and editors
 .idea/
 .project
@@ -21,12 +24,15 @@ yarn-error.log
 *.sublime-workspace
 
 # Visual Studio Code
-.vscode/*
+client/.vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
+
+#Visual Studio
+web-api/.vs/*
 
 # Miscellaneous
 /.angular/cache
@@ -36,7 +42,6 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
-.vs/*
 
 # System files
 .DS_Store

@@ -9,7 +9,7 @@ import { PolicyResponseModel } from '../models/ResponseModels/PolicyResponseMode
 })
 export class PolicyService {
   policies: Policy[] = [];
-  getPoliciesUrl = 'https://localhost:44346/api/Region/GetAll';
+  getPoliciesUrl = 'https://localhost:44346/api/Policy/GetAll';
   addPolicyUrl = 'https://localhost:44346/api/Policy';
   constructor(private httpClient: HttpClient) {}
 

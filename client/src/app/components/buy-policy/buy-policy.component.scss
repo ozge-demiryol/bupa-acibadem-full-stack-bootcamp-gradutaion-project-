@@ -1,0 +1,173 @@
+$bg-color__input: #5f9ef75b;
+$outline__input: #5f9ef749;
+$shadow__input: #5f9ef7;
+$font-dark: #031d3f;
+$btn-color: #003082;
+$shadow: #03045e;
+$font-light: #f6f9fe;
+
+.form-wrapper {
+  background-color: white;
+  padding: 3rem;
+  border-radius: 0.625rem;
+  box-shadow: 0px 0px 10px -4px rgba(32, 37, 163, 0.25);
+
+  div.divider-half {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  label {
+    margin: 1rem auto 0.5rem auto;
+  }
+  input[type="text"].address {
+    height: 4rem;
+  }
+  input[type="text"],
+  input[type="number"],
+  input[type="date"] {
+    margin: auto;
+    padding: 0.5rem 1.5rem;
+    max-height: 2rem;
+    font-size: 1rem;
+    border: none;
+    color: $font-dark;
+    border-radius: 1rem;
+    background-color: $bg-color__input;
+    color: $font-dark;
+    letter-spacing: 0.3px;
+    &:focus {
+      outline: 2px solid $shadow__input;
+      box-shadow: 0px 0px 15px 5px $bg-color__input;
+    }
+
+    div.gender{
+      display: flex;
+      flex-direction: row;
+      align-items:center ;
+      justify-content: flex-start;
+    }
+  }
+
+  .btn-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3rem;
+    button {
+      padding: 0 2.5rem;
+      height: 2.5rem;
+      border-radius: 1.25rem;
+      border: none;
+      background-color: $btn-color;
+      color: $font-light;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      fa-icon.next {
+        margin-left: 0.5rem;
+      }
+      fa-icon.prev {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .policy-card__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .policy-card {
+      width: 100%;
+      background-color: $bg-color__input;
+      margin: 1rem;
+      padding: 1rem;
+      border-radius: 0.625rem;
+      border: 2px solid $bg-color__input;
+      .policy-title {
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+      .policy-price {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  div.policy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    select{
+      width: 60%;
+    }
+  }
+
+  .thanks-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .icon-success {
+      font-size: 5.5rem;
+      margin-bottom: 2rem;
+    }
+    p {
+      font-size: 1.125rem;
+      text-align: center;
+      font-weight: 400;
+    }
+    button.btn-thanks {
+      padding: 0 2.5rem;
+      height: 3rem;
+      margin-top: 3rem;
+      border-radius: 1.5rem;
+      border: 2px solid $btn-color;
+      background-color: transparent;
+      color: $btn-color;
+      font-weight: 500;
+      font-size: 1.25rem;
+      letter-spacing: 0.3px;
+      &:hover {
+        border: none;
+        background-color: $btn-color;
+        color: $font-light;
+        cursor: pointer;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 200px) and (max-width: 768px) {
+    .form-wrapper {
+      padding: 0;
+      font-size: 14px;
+
+      div.gender{
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    div.divider-half {
+      flex-direction: column;
+      width: 50%;
+    }
+    .btn-container {
+      button {
+        padding: 0 1rem;
+        .btn-content {
+          display: flex;
+          flex-direction: row;
+        }
+      }
+    }
+    .policy-card__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

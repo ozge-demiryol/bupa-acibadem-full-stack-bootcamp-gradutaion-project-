@@ -20,28 +20,12 @@ export class AdminComponent implements OnInit {
   orderStatus: OrderStatus[] = [];
   isLoaded: boolean = false;
   constructor(
-    private _customerService: CustomerService,
-    private _ordersCustomerService: OrdersCustomerService,
-    private _orderStatusService: OrderStatusService
+ private _orderStatusService: OrderStatusService
   ) {}
 
   ngOnInit(): void {
-    this.getAllCustomers();
-    this.getCustomersStatus();
     this.getAllOrderStatus();
     this.isLoaded = true;
-  }
-
-  getAllCustomers(): void {
-    this._customerService.getAllCustomers().subscribe((res) => {
-      this.customers = res.data;
-    });
-  }
-
-  getCustomersStatus(): void {
-    this._ordersCustomerService.getData().subscribe((res) => {
-      this.customersStatus = res.data;
-    });
   }
 
   getAllOrderStatus(): void {
