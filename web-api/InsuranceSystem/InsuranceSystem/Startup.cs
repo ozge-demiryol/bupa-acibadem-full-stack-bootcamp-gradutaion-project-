@@ -85,12 +85,13 @@ namespace InsuranceSystem
             #region Cors Settings
             services.AddCors(opt =>
             {
-                opt.AddPolicy("CorsPlicy",
+                opt.AddPolicy("AllowAnyOrigin",
                     builder => builder
                     .AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader()
                 );
+
             });
             #endregion
 

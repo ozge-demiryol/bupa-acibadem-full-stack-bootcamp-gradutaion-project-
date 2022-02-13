@@ -20,15 +20,8 @@ This repository contains the graduation project of [Patika.dev](https://patika.d
 
 ### Customer Screen
 
-##### Screenshots of desktop version
-
-##### Screenshots of mobile version
-
 ### Administration Screen
-
-##### Screenshots of desktop version
-
-##### Screenshots of mobile version
+![](./screenshots/admin-home.png)
 
 ## Used Technologies
 
