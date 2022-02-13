@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BuyPolicyComponent } from '../components/buy-policy/buy-policy.component';
-import { CustomerHomeComponent } from '../components/customer-home/customer-home.component';
+import { BuyPolicyComponent } from '../components/customer-screen-components/buy-policy/buy-policy.component';
+import { CustomerHomeComponent } from '../components/customer-screen-components/customer-home/customer-home.component';
 
 const routes: Routes = [
   { path: '', component: CustomerHomeComponent },

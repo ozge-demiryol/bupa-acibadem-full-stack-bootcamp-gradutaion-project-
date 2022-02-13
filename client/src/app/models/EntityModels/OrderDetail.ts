@@ -3,4 +3,6 @@ export interface OrderDetail {
   customerId: number;
   statusId: number;
   paymentId: number;
+  cardId:number;
+  orderId:number;
 }

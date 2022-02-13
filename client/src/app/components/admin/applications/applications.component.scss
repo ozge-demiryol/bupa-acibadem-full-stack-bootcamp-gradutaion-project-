@@ -1,0 +1,24 @@
+$border-radius: 0.625rem;
+$bg-color__input: #5f9ef777;
+$bg-color__panel: #003082;
+$bg-color__panel__hover: #5f9ef73a;
+$outline__input: #5f9ef783;
+$shadow__input: #5f9ef7;
+$font-dark: #031d3f;
+$font-light: #f6f9fe;
+
+@import '../table.scss';
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+
+  .content-area {
+    width: 100%;
+    background-color: white;
+    border-radius: $border-radius;
+  }
+}
+
+

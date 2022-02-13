@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Application } from 'src/app/models/EntityModels/Application';
 import { ApplicationService } from 'src/app/services/application.service';
 
@@ -9,6 +10,7 @@ import { ApplicationService } from 'src/app/services/application.service';
 })
 export class ApplicationsComponent implements OnInit {
   applications: Application[] = [];
+  searchIcon=faSearch;
   constructor(private _applicationService: ApplicationService,) { }
 
   ngOnInit(): void {

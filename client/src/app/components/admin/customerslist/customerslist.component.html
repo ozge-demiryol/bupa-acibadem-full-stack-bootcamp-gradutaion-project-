@@ -1,17 +1,13 @@
 <aside class="container">
   <app-sidebar></app-sidebar>
-  <div class="content-area">
+  <main class="content-area">
     <div class="search-area">
-      <i class="search-icon"></i>
-      <input type="text" class="searchbox">
-    </div>
-    <div class="search-area">
-      <i class="search-icon"></i>
+      <fa-icon class="search-icon"[icon]="searchIcon"></fa-icon>
       <input type="text" class="searchbox">
     </div>
     <table class="table">
-      <thead>
-        <tr class="table-head">
+      <thead style="text-align: center; justify-content: center;">
+        <tr>
           <th>TC Kimlik No</th>
           <th>Ad</th>
           <th>Soyad</th>
@@ -33,5 +29,5 @@
         </tr>
       </tbody>
     </table>
-  </div>
+  </main>
 </aside>

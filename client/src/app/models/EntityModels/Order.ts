@@ -3,6 +3,5 @@ export interface Order {
   customerId: number;
   policyId: number;
   createdAt: Date;
-  detailId: number;
-  cardId: number;
+  paymentId:number;
 }

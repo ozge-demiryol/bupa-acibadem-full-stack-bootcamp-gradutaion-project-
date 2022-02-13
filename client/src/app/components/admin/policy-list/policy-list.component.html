@@ -1,0 +1,33 @@
+<aside class="container">
+  <app-sidebar></app-sidebar>
+  <main class="content-area">
+    <div class="search-area">
+      <fa-icon class="search-icon"[icon]="searchIcon"></fa-icon>
+      <input type="text" class="searchbox">
+    </div>
+    <table class="table">
+      <thead style="text-align: center; justify-content: center;">
+        <tr>
+          <th>TC Kimlik No</th>
+          <th>Ad</th>
+          <th>Soyad</th>
+          <th>Poliçe</th>
+          <th>Satın Alma Tarihi</th>
+          <th>Ödeme Türü</th>
+          <th>Prim</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let x of customersStatus">
+          <td>{{x.identityNo}}</td>
+          <td>{{x.name}}</td>
+          <td>{{x.surname}}</td>
+          <td>{{x.title}}</td>
+          <td>{{x.createdAt | date}}</td>
+          <td>{{x.paymentType}}</td>
+          <td>{{x.price}} &#x20BA;</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</aside>

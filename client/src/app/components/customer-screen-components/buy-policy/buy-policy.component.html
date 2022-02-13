@@ -1,0 +1,277 @@
+<div class="container mt-5">
+  <!--Adim 1-->
+  <section *ngIf="step==1" class="row form-wrapper col-lg-6 col-xl-5 m-auto">
+    <h2>Adım 1</h2>
+    <!--TC No Baslangic-->
+    <form [formGroup]="customerRegisterForm">
+      <div>
+        <div>
+          <label for=""> TC Kimlik No</label>
+          <span class="text-danger mx-1">*</span>
+        </div>
+        <input style="width: 100%;" type="text" name="identityNo" class="form-control" formControlName="identityNo">
+        <span
+          *ngIf="(customerRegisterForm.controls['identityNo'].dirty || customerRegisterForm.controls['identityNo'].touched) && customerRegisterForm.hasError('required','identityNo')"
+          class="text-danger">Lütfen TC Kimlik numaranızı giriniz.</span>
+      </div>
+      <!--TC No Bitis-->
+      <!--Ad Baslangic-->
+      <div>
+        <div>
+          <label for="">Ad</label>
+          <span class="text-danger mx-1">*</span>
+        </div>
+        <input type="text" id="name" formControlName="name">
+        <span
+          *ngIf="(customerRegisterForm.controls['name'].dirty || customerRegisterForm.controls['name'].touched) && customerRegisterForm.hasError('required','name')"
+          class="text-danger">Lütfen adınızı giriniz.</span>
+      </div>
+      <!--Ad Bitis-->
+      <!--Soyad Baslangic-->
+      <div>
+        <label for="">Soyad</label>
+        <span class="text-danger mx-1">*</span>
+        <input type="text" id="surname" formControlName="surname">
+        <span
+          *ngIf="(customerRegisterForm.controls['surname'].dirty || customerRegisterForm.controls['surname'].touched) && customerRegisterForm.hasError('required','surname')"
+          class="text-danger">Lütfen soyadınızı giriniz.</span>
+      </div>
+      <!--Soyad Bitis-->
+      <!--Dogum Tarihi Baslangic-->
+      <div>
+        <div>
+          <label for="">Doğum Tarihi</label>
+          <span class="text-danger mx-1">*</span>
+        </div>
+        <input type="date" id="birthDate" formControlName="birthDate" placeholder="dd/mm/yyyy">
+        <span
+          *ngIf="(customerRegisterForm.controls['birthDate'].dirty || customerRegisterForm.controls['birthDate'].touched) && customerRegisterForm.hasError('required','birthDate')"
+          class="text-danger">Lütfen doğum tarihinizi giriniz.</span>
+      </div>
+      <!--Dogum Tarihi Bitis-->
+      <!--E-posta ve telefon Baslangic-->
+      <div class="divider-half">
+        <!--E-posta Baslangic-->
+        <div>
+          <div>
+            <label for="">E-posta</label>
+            <span class="text-danger mx-1">*</span>
+          </div>
+          <input type="text" id="email" formControlName="email">
+          <span
+            *ngIf="(customerRegisterForm.controls['email'].dirty || customerRegisterForm.controls['email'].touched )&& customerRegisterForm.hasError('required','email')"
+            class="text-danger">Lütfen e-posta adresinizi giriniz.</span>
+          <span *ngIf="customerRegisterForm.hasError('email','email')" class="text-danger">Lütfen geçerli bir e-posta
+            adresi giriniz.</span>
+        </div>
+        <!--E-posta Bitis-->
+        <!--Telefon Baslangic-->
+        <div>
+          <div>
+            <label for="">Telefon</label>
+            <span class="text-danger mx-1">*</span>
+          </div>
+          <input type="text" id="phone" formControlName="phone">
+          <span
+            *ngIf="(customerRegisterForm.controls['phone'].touched || customerRegisterForm.controls['phone'].dirty) && customerRegisterForm.hasError('required','phone')"
+            class="text-danger">Lütfen telefon numaranızı giriniz.</span>
+          <span *ngIf="customerRegisterForm.hasError('phone','pattern')" class="text-danger">Lütfen geçerli bir telefon
+            numarası giriniz.</span>
+        </div>
+        <!--Telefon Bitis-->
+      </div>
+      <!--E-posta ve telefon Bitis-->
+      <!--Adres Baslangic-->
+      <div>
+        <div>
+          <label for="">Adres</label>
+          <span class="text-danger mx-1">*</span>
+        </div>
+        <input class="address" style="width: 100%;" type="text" id="address" formControlName="address">
+        <span
+          *ngIf="(customerRegisterForm.controls['address'].touched || customerRegisterForm.controls['address'].dirty)&& customerRegisterForm.hasError('required','address')"
+          class="text-danger">Lütfen adresinizi giriniz.</span>
+      </div>
+      <!--Adres Bitis-->
+      <!--İl ve İlce Baslangic-->
+      <div>
+        <!--İl-->
+        <div class="divider-half">
+          <div>
+            <label for="">İl</label>
+            <span class="text-danger mx-1">*</span>
+          </div>
+          <select name="" id="" formControlName="cityId">
+            <option value="" disabled id="cityId">--Seçiniz--</option>
+            <option value="{{city.cityId}}" *ngFor="let city of cities" id="cityId">
+              {{city.cityName}}</option>
+          </select>
+          <br>
+          <span
+            *ngIf="(customerRegisterForm.controls['cityId'].touched || customerRegisterForm.controls['cityId'].dirty)&&customerRegisterForm.hasError('required','cityId')"
+            class="text-danger">Lütfen il seçiniz.</span>
+        </div>
+        <!--İlce-->
+        <div>
+          <div>
+            <label for="">İlçe</label>
+            <span class="text-danger mx-1">*</span>
+          </div>
+          <select name="" id="" formControlName="regionId">
+            <option value="" disabled id="cityId">--Seçiniz--</option>
+            <option value="{{x.regionId}}" *ngFor="let x of regions" id="regionId">
+              {{x.regionName}}</option>
+          </select>
+          <span
+            *ngIf="(customerRegisterForm.controls['regionId'].touched || customerRegisterForm.controls['regionId'].dirty)&&customerRegisterForm.hasError('required','regionId')"
+            class="text-danger">Lütfen ilçe seçiniz.</span>
+        </div>
+      </div>
+      <!--İl ve İlce Bitis-->
+      <!--Cinsiyet-->
+      <div>
+        <label for="">Cinsiyet</label>
+        <span class="text-danger mx-1">*</span>
+      </div>
+
+      <div class="gender">
+        <input class="mx-2" type="radio" id="gender" formControlName="gender" value="Kadın">
+        <label class="mx-1" for="">
+          Kadın
+        </label>
+        <input class="mx-2" type="radio" name="gender" value="Erkek" formControlName="gender">
+        <label class="mx-2" for="">
+          Erkek
+        </label>
+        <input class="mx-2" type="radio" name="gender" value="Diğer" formControlName="gender">
+        <label class="mx-2" for="">
+          Diğer
+        </label>
+        <br>
+        <span
+            *ngIf="customerRegisterForm.hasError('required','gender')"
+            class="text-danger">Lütfen cinsiyetinizi seçiniz.</span>
+      </div>
+      <div class="divider">
+        <!--Boy Baslangic-->
+        <div>
+          <div>
+            <label for="">Boy (cm)</label>
+            <span class="text-danger mx-1">*</span>
+          </div>
+          <input type="number" id="height" formControlName="height">
+          <span
+            *ngIf="(customerRegisterForm.controls['height'].touched || customerRegisterForm.controls['height'].dirty)&&customerRegisterForm.hasError('required','height')"
+            class="text-danger">Lütfen boyunuzu giriniz.</span>
+        </div>
+        <!--Kilo Baslangic-->
+        <div>
+          <div>
+            <label for="">Kilo (kg)</label>
+            <span class="text-danger mx-1">*</span>
+          </div>
+          <input type="number" id="weight" formControlName="weight">
+          <span
+            *ngIf="(customerRegisterForm.controls['weight'].touched || customerRegisterForm.controls['weight'].dirty)&&customerRegisterForm.hasError('required','weight')"
+            class="text-danger">Lütfen kilonuzu giriniz.</span>
+        </div>
+      </div>
+    </form>
+    <!--İleri-->
+    <div class="btn-container">
+      <div class="btn-next">
+        <button class="btn-navigator" (click)="increaseStep()">
+          <div>
+            İleri<fa-icon class="next" [icon]="nextArrow"></fa-icon>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+  <!--Adim 2-->
+  <section *ngIf="step==2" class="row form-wrapper col-lg-9 col-xl-6 m-auto">
+    <h2>Adım 2</h2>
+    <p>Satın almak istediğiniz paketi ve ödeme türünü seçiniz.</p>
+    <form [formGroup]="addOrderForm">
+      <div class="policy-card__container">
+        <div class="policy-card">
+          <input type="radio" name="policy" value="1">
+          <p class="policy-title">Yatarak Tedavi</p>
+          <p class="policy-price">500 &#8378;</p>
+        </div>
+        <div class="policy-card">
+          <input type="radio" name="policy" value="2">
+          <p class="policy-title">Ayakta Tedavi</p>
+          <p class="policy-price">1000 &#8378;</p>
+        </div>
+        <div class="policy-card">
+          <input type="radio" name="policy" value="3">
+          <p class="policy-title">Yatarak+Ayakta Tedavi</p>
+          <p class="policy-price">1300 &#8378;</p>
+        </div>
+      </div>
+      <div class="policy">
+        <select name="" id="">
+          <option value="">--Seçiniz--</option>
+          <option *ngFor="let x of paymentTypes" value="{{x.paymentId}}">{{x.title}}</option>
+        </select>
+      </div>
+    </form>
+    <br />
+    <div class="btn-container">
+      <div>
+        <button class="btn-navigator" (click)="increaseStep()">
+          <div class="btn-content">
+            <fa-icon class="prev" [icon]="prevArrow"></fa-icon>Geri
+          </div>
+        </button>
+      </div>
+      <span></span>
+      <div *ngIf="isLoading" class="spinner-grow" style="width: 3rem; height: 3rem; margin: auto;" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div>
+        <button class="btn-navigator">
+          <div>
+            İleri<fa-icon class="next" (click)="increaseStep()" [icon]="nextArrow"></fa-icon>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+  <!--Adim 3-->
+  <div *ngIf="step==3" class="row form-wrapper col-lg-6 m-auto">
+    <h2>Adım 3 Ödeme</h2>
+    <div class="btn-container">
+      <div>
+        <button class="btn-navigator">
+          <div>
+            <fa-icon class="prev" [icon]="prevArrow"></fa-icon>Geri
+          </div>
+        </button>
+      </div>
+      <div *ngIf="isLoading" class="spinner-grow" style="width: 3rem; height: 3rem; margin: auto;" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div>
+        <button class="btn-success" (click)="completeAllSteps()">
+          <div>
+            İşlemi Tamamla
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!--Adim 4-->
+  <div *ngIf="step==4" class="row form-wrapper col-lg-6 m-auto">
+    <h2 style="text-align: center;">Teşekkürler</h2>
+    <div class="thanks-container ">
+      <fa-icon class="text-success icon-success" [icon]="checkIcon"></fa-icon>
+      <p>Poliçe başvurunuz başarıyla gerçekleşmiştir.</p>
+      <p>Bizi tercih ettiğiniz için teşekkür ederiz.</p>
+      <a href="/">
+        <button class="btn-thanks">Ana Sayfaya Dön</button>
+      </a>
+    </div>
+  </div>
+</div>

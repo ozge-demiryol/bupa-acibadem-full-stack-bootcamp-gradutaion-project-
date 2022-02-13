@@ -7,6 +7,7 @@ $shadow__input: #5f9ef7;
 $font-dark: #031d3f;
 $font-light: #f6f9fe;
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 .panel-container {
   margin: 0 3rem;
   padding: 2.5rem;
@@ -22,15 +23,25 @@ $font-light: #f6f9fe;
     color: $font-light;
 
     h3{
-      margin-left: 2rem;
+      margin: 3rem auto 2rem auto;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
     }
 
+    hr{
+      margin: 2rem auto;
+      border-top: 0.25rem solid $font-light;
+      border-radius: 0.125rem;
+      width: 100%;
+      margin: auto;
+    }
     a {
       color: $font-light;
       text-decoration: none;
-      padding: 1.2rem 4rem 1.2rem 2rem;
+      font-family: 'Poppins', sans-serif;
+      padding: 1rem 4rem 1rem 2rem;
       border-radius: 0.5rem;
-      font-size: 1.25rem;
+      font-size: 1rem;
       div.panel-icons{
         display: flex;
         flex-direction: row;
@@ -59,6 +70,7 @@ $font-light: #f6f9fe;
       width: 90%;
       align-items: center;
       justify-content: center;
+      padding: 1.5rem;
 
       div.panel-navigation {
         a {

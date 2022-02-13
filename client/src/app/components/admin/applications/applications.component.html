@@ -2,12 +2,12 @@
 <app-sidebar></app-sidebar>
   <div class="content-area">
     <div class="search-area">
-      <i class="search-icon"></i>
+      <fa-icon class="search-icon"[icon]="searchIcon"></fa-icon>
       <input type="text" class="searchbox">
     </div>
     <table class="table">
-      <thead>
-        <tr class="table-head">
+      <thead style="text-align: center; justify-content: center;">
+        <tr>
           <th>TC Kimlik No</th>
           <th>Ad</th>
           <th>Soyad</th>
@@ -25,5 +25,17 @@
         </tr>
       </tbody>
     </table>
+    <br/>
+    <ul class="pagination justify-content-center">
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1">Previous</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="/mudurluk/basvurular">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
   </div>
 </aside>

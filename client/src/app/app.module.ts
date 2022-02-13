@@ -8,15 +8,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminComponent } from './components/admin/admin.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { ApplicationsComponent } from './components/applications/applications.component';
-import { CustomerHomeComponent } from './components/customer-home/customer-home.component';
-import { BuyPolicyComponent } from './components/buy-policy/buy-policy.component';
+import { SidebarComponent } from './components/admin/sidebar/sidebar.component';
+import { ApplicationsComponent } from './components/admin/applications/applications.component';
+import { CustomerHomeComponent } from './components/customer-screen-components/customer-home/customer-home.component';
+import { BuyPolicyComponent } from './components/customer-screen-components/buy-policy/buy-policy.component';
 import { AdministrationScreenModule } from './administration-screen/administration-screen.module';
 import { CustomerScreenRoutingModule } from './customer-screen/customer-screen-routing.module';
-import { PolicyListComponent } from './components/policy-list/policy-list.component';
-import { AdminHomeComponent } from './components/admin-home/admin-home.component';
-import { CustomerslistComponent } from './components/customerslist/customerslist.component';
+import { PolicyListComponent } from './components/admin/policy-list/policy-list.component';
+import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
+import { CustomerslistComponent } from './components/admin/customerslist/customerslist.component';
 
 @NgModule({
   declarations: [
