@@ -20,9 +20,22 @@ This repository contains the graduation project of [Patika.dev](https://patika.d
 
 ### Customer Screen
 
+<img src="./screenshots/customer-home.png" width="400px">
+<br>
+<img src="./screenshots/customer-register-step1.png" width="400px">
+<br>
+<img src="./screenshots/customer-register-step2.png" width="400px">
+<br>
+<img src="./screenshots/customer-register-step3.png" width="400px">
+<br>
+<img src="./screenshots/customer-register-thank-you-screen.png" width="400px">
+
 ### Administration Screen
 
-![](./screenshots/admin-home.png)
+<img src="./screenshots/admin-home.png" width="400px">
+<img src="./screenshots/admin-applications.png" width="400px">
+<img src="./screenshots/admin-customers.png" width="400px">
+<img src="./screenshots/admin-policies.png" width="400px"> 
 
 ## Used Technologies
 

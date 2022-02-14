@@ -56,7 +56,7 @@ namespace InsuranceSystem.Base
             }
         }
 
-        [HttpPost]
+        [HttpPost("Add")]
         public IResponse<TDto> Add(TDto item)
         {
             try
@@ -92,7 +92,7 @@ namespace InsuranceSystem.Base
             }
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("Delete/{id}")]
         public IResponse<bool> Delete(int id)
         {
             try
