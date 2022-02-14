@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/models/EntityModels/Customer';
 import { CustomerService } from 'src/app/services/customer.service';
-import {faSearch} from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-customerslist',
@@ -9,8 +8,7 @@ import {faSearch} from '@fortawesome/free-solid-svg-icons'
   styleUrls: ['./customerslist.component.scss']
 })
 export class CustomerslistComponent implements OnInit {
-
-  searchIcon=faSearch;
+  page=1;
   customers: Customer[] = [];
   constructor(private _customerService: CustomerService,) { }
 
@@ -22,4 +20,10 @@ export class CustomerslistComponent implements OnInit {
       this.customers = res.data;
     });
   }
+
+  onDataTableChange(event:any):void{
+    this.page=event;
+    this.getAllCustomers();
+  }
+
 }

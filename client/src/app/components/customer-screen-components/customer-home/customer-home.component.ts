@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {faBedPulse, faHeartPulse, faHospitalUser} from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-customer-home',
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerHomeComponent implements OnInit {
 
+  bedPulseIcon=faBedPulse;
+  heartPulseIcon=faHeartPulse;
+  medical=faHospitalUser;
   constructor() { }
 
   ngOnInit(): void {

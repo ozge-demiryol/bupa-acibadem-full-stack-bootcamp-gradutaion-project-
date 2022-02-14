@@ -18,6 +18,7 @@ import { PolicyListComponent } from './components/admin/policy-list/policy-list.
 import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
 import { CustomerslistComponent } from './components/admin/customerslist/customerslist.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

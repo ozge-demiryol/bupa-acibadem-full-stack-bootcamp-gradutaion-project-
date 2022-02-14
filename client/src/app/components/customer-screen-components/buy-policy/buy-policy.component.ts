@@ -12,7 +12,6 @@ import { PaymentTypeService } from 'src/app/services/payment-type.service';
 import { PaymentType } from 'src/app/models/EntityModels/PaymentType';
 import {
   FormBuilder,
-  FormControl,
   FormGroup,
   Validators,
 } from '@angular/forms';
@@ -20,8 +19,7 @@ import { CityService } from 'src/app/services/city.service';
 import { RegionService } from 'src/app/services/region.service';
 import { City } from 'src/app/models/EntityModels/City';
 import { Region } from 'src/app/models/EntityModels/Region';
-import { Observable } from 'rxjs';
-import { Customer } from 'src/app/models/EntityModels/Customer';
+import { CreditCardService } from 'src/app/services/credit-card.service';
 
 @Component({
   selector: 'app-buy-policy',
@@ -33,14 +31,14 @@ export class BuyPolicyComponent implements OnInit {
   cities: City[] = [];
   regions: Region[] = [];
   paymentTypes: PaymentType[] = [];
-  step: number = 2;
+  step: number = 1;
   nextArrow = faArrowRight;
   prevArrow = faArrowLeft;
   checkIcon = faCheckCircle;
   isLoading: boolean = false;
   customerRegisterForm!: FormGroup;
-  addOrderForm!:FormGroup;
-  addCreditCardForm!:FormGroup;
+  addOrderForm!: FormGroup;
+  addCreditCardForm!: FormGroup;
 
   constructor(
     private _policyService: PolicyService,
@@ -49,6 +47,7 @@ export class BuyPolicyComponent implements OnInit {
     private _cityService: CityService,
     private _regionService: RegionService,
     private _paymentTypeService: PaymentTypeService,
+    private _creditCardService: CreditCardService,
     private formBuilder: FormBuilder
   ) {}
 
@@ -57,25 +56,26 @@ export class BuyPolicyComponent implements OnInit {
     this.listPaymentTypes();
     this.listCities();
     this.listRegions();
-
+    this.completeAllSteps();
     //customer register form control
     this.customerRegisterForm = this.formBuilder.group({
       name: ['', [Validators.required]],
       identityNo: ['', [Validators.required]],
-      surname:['', Validators.required],
+      surname: ['', Validators.required],
       birthDate: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['',
-        [Validators.required]
-      ],
+      phone: ['', [Validators.required]],
       gender: ['', [Validators.required]],
-      address: ['',
-        [Validators.required,
-        Validators.minLength(20),
-        Validators.maxLength(250)]
+      address: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(20),
+          Validators.maxLength(250),
+        ],
       ],
       cityId: ['', [Validators.required]],
-      regionId: ['',[Validators.required]],
+      regionId: ['', [Validators.required]],
       height: ['', [Validators.required]],
       weight: ['', [Validators.required]],
     });
@@ -83,19 +83,16 @@ export class BuyPolicyComponent implements OnInit {
     this.addOrderForm = this.formBuilder.group({
       policyId: ['', [Validators.required]],
       paymentId: ['', Validators.required],
-      createdAt: [Date.now()]
+      createdAt: [Date.now()],
     });
     //credit card form control
-  this.addCreditCardForm = this.formBuilder.group({
-    name:['', [Validators.required]],
-    surname: ['', [Validators.required]],
-    cardNumber: ['', [
-      Validators.required,
-      Validators.maxLength(16),
-    ]],
-    expDate: ['', [Validators.required]],
-    cvv: ['', [Validators.required, Validators.maxLength(4)]],
-  });
+    this.addCreditCardForm = this.formBuilder.group({
+      name: ['', [Validators.required]],
+      surname: ['', [Validators.required]],
+      cardNumber: ['', [Validators.required, Validators.maxLength(16)]],
+      expDate: ['', [Validators.required]],
+      cvv: ['', [Validators.required, Validators.maxLength(4)]],
+    });
   }
 
   listCities(): void {
@@ -121,27 +118,45 @@ export class BuyPolicyComponent implements OnInit {
     });
   }
 
-  registerCustomer() {
-    console.log(this.customerRegisterForm.valid);
+  increaseStep(): void {
+    if (
+      this.customerRegisterForm.valid ||
+      this.addOrderForm.valid ||
+      this.addCreditCardForm.valid
+    ) {
+      this.step++;
+    }
+  }
+
+  decreaseStep(): void {
+    this.step--;
+  }
+
+  registerCustomer():void {
     if (this.customerRegisterForm.valid) {
       let customerModel = Object.assign({}, this.customerRegisterForm.value);
       this._customerService.addCustomer(customerModel).subscribe((data) => {
         console.log(data);
       });
-      console.log(customerModel);
-      this.step++
     }
   }
 
   addOrder(): void {
     if (this.addOrderForm.valid) {
       let orderModel = Object.assign({}, this.addOrderForm.value);
-      //this._orderService.
+      this._orderService.addOrder(orderModel).subscribe((data) => {
+        console.log(data);
+      });
     }
   }
 
-  addCreditCard():void{
-
+  addCreditCard(): void {
+    if (this.addCreditCardForm.valid) {
+      let creditCardModel = Object.assign({}, this.addCreditCardForm.value);
+      this._creditCardService.addCreditCard(creditCardModel).subscribe((data) => {
+        console.log(data);
+      });
+    }
   }
 
   completeAllSteps(): void {
@@ -149,13 +164,5 @@ export class BuyPolicyComponent implements OnInit {
     this.addOrder();
     this.addCreditCard();
     this.step++;
-  }
-
-  increaseStep(): void {
-    this.step++;
-  }
-
-  decreaseStep(): void {
-    this.step--;
   }
 }

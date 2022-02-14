@@ -1,63 +1,31 @@
 <div class="container">
   <section class="row">
-    <ul class="global-slide-content d-flex flex-direction-row align-items-center justify-content-center">
-      <li>
-        <div class="global-title">
-          <a href="/neden-bupa-acibadem-sigorta">
-            <img src="https://www.bupaacibadem.com.tr/media/4261/saglik-sigortaniz.jpg">
-            <h2>NEDEN BUPA ACIBADEM SİGORTA?</h2>
-          </a>
+    <div class="application-container col-lg-9 m-auto">
+      <h4>İhtiyaçlarınıza uygun poliçe hizmetini seçin, poliçe başvurunuzu yapın.</h4>
+      <div class="policy-card__container">
+        <div class="policy-card">
+          <fa-icon class="policy__icon" [icon]="bedPulseIcon"></fa-icon>
+          <p class="policy-title">Yatarak Tedavi</p>
+          <p class="policy-price">500 &#8378;</p>
         </div>
-      </li>
-      <li>
-        <div class="global-title">
-          <a href="/neden-ozel-saglik-sigortasi-almaliyim">
-            <img src="https://www.bupaacibadem.com.tr/media/4258/home-slider-bottom-02.jpg">
-            <h2>NEDEN ÖZEL SAĞLIK SİGORTASI?</h2>
-          </a>
-
+        <div class="policy-card">
+          <fa-icon class="policy__icon" [icon]="heartPulseIcon"></fa-icon>
+          <p class="policy-title">Ayakta Tedavi</p>
+          <p class="policy-price">1000 &#8378;</p>
         </div>
-      </li>
-      <li>
-        <div class="global-title">
-          <a href="https://www.sencard.com.tr/sik-kullanilanlar/medikal-hizmet-agi" target="_blank">
-            <img src="https://www.bupaacibadem.com.tr/media/4259/home-slider-bottom-03.jpg">
-            <h2>MEDİKAL HİZMET AĞI ARA</h2>
-          </a>
-
+        <div class="policy-card">
+          <fa-icon class="policy__icon" [icon]="medical"></fa-icon>
+          <p class="policy-title">Yatarak+Ayakta Tedavi</p>
+          <p class="policy-price">1300 &#8378;</p>
         </div>
-      </li>
-      <li>
-        <div class="global-title">
-          <a href="https://online.sencard.com.tr " target="_blank">
-            <img src="https://www.bupaacibadem.com.tr/media/5639/27bireysel-online-islemler.jpg">
-            <h2>BİREYSEL ONLİNE İŞLEMLER</h2>
-            <h2 class="showHover">Sigortacılık işlemleriniz ve sağlıklı mutlu yaşam hizmetleri için tıklayın</h2>
-          </a>
-
-        </div>
-      </li>
-    </ul>
-  </section>
-  <section class="row">
-    <h4 class="text-center">İhtiyaçlarınıza uygun poliçe hizmetini seçin, poliçe başvurunuzu yapın.</h4>
-    <div class="policy-card__container">
-      <div class="policy-card">
-        <p class="policy-title">Yatarak Tedavi</p>
-        <p class="policy-price">500 &#8378;</p>
       </div>
-      <div class="policy-card">
-        <p class="policy-title">Ayakta Tedavi</p>
-        <p class="policy-price">1000 &#8378;</p>
-      </div>
-      <div class="policy-card">
-        <p class="policy-title">Yatarak+Ayakta Tedavi</p>
-        <p class="policy-price">1300 &#8378;</p>
-      </div>
+      <a href="/satinal">
+        <button class="btn-order">Poliçe Başvurusu Yap</button>
+      </a>
     </div>
-    <a href="/satinal">
-      <button class="btn-order">Poliçe Başvurusu Yap</button>
-    </a>
   </section>
 </div>
+<footer>
+
+</footer>
 <router-outlet></router-outlet>

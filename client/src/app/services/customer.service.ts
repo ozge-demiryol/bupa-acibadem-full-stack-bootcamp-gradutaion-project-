@@ -10,7 +10,7 @@ import { CustomerResponseModel } from '../models/ResponseModels/CustomerResponse
 export class CustomerService {
 
   getUrl="https://localhost:44346/api/Customer/GetAll"
-  postUrl="https://localhost:44346/api/Customer"
+  postUrl="https://localhost:44346/api/Customer/Add"
   constructor(private httpClient:HttpClient) { }
 
   getAllCustomers():Observable<CustomerResponseModel>{

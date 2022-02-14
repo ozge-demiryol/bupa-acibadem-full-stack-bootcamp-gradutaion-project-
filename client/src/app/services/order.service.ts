@@ -10,12 +10,13 @@ import { OrderResponseModel } from '../models/ResponseModels/OrderResponseModel'
 export class OrderService {
   orders: Order[] = [];
   url = 'https://localhost:44346/api/Order/GetAll';
+  postUrl='https://localhost:44346/api/Order/Add';
   constructor(private httpClient: HttpClient) {}
 
   getAllOrders(): Observable<OrderResponseModel> {
     return this.httpClient.get<OrderResponseModel>(this.url);
   }
-  addCustomer(order: Order) {
-    return this.httpClient.post(this.url, order);
-  }
+  addOrder(order:Order):Observable<OrderResponseModel>{
+    return this.httpClient.post<OrderResponseModel>(this.postUrl ,order)
+}
 }
