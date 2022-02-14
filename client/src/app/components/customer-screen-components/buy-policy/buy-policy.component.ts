@@ -20,6 +20,8 @@ import { CityService } from 'src/app/services/city.service';
 import { RegionService } from 'src/app/services/region.service';
 import { City } from 'src/app/models/EntityModels/City';
 import { Region } from 'src/app/models/EntityModels/Region';
+import { Observable } from 'rxjs';
+import { Customer } from 'src/app/models/EntityModels/Customer';
 
 @Component({
   selector: 'app-buy-policy',
@@ -31,7 +33,7 @@ export class BuyPolicyComponent implements OnInit {
   cities: City[] = [];
   regions: Region[] = [];
   paymentTypes: PaymentType[] = [];
-  step: number = 1;
+  step: number = 2;
   nextArrow = faArrowRight;
   prevArrow = faArrowLeft;
   checkIcon = faCheckCircle;
@@ -58,42 +60,41 @@ export class BuyPolicyComponent implements OnInit {
 
     //customer register form control
     this.customerRegisterForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      identityNo: ['', Validators.required],
+      name: ['', [Validators.required]],
+      identityNo: ['', [Validators.required]],
       surname:['', Validators.required],
       birthDate: ['', Validators.required],
-      email: ['', Validators.required, Validators.email],
+      email: ['', [Validators.required, Validators.email]],
       phone: ['',
-        Validators.required,
-        Validators.pattern('^(05(d{9}))$'),
+        [Validators.required]
       ],
-      gender: ['', Validators.required],
+      gender: ['', [Validators.required]],
       address: ['',
-        Validators.required,
+        [Validators.required,
         Validators.minLength(20),
-        Validators.maxLength(250),
+        Validators.maxLength(250)]
       ],
-      cityId: ['', Validators.required,Validators.min(1)],
-      regionId: ['',Validators.required,Validators.min(1)],
-      height: ['', Validators.required],
-      weight: ['', Validators.required],
+      cityId: ['', [Validators.required]],
+      regionId: ['',[Validators.required]],
+      height: ['', [Validators.required]],
+      weight: ['', [Validators.required]],
     });
     //policy form control
     this.addOrderForm = this.formBuilder.group({
-      policyId: ['', Validators.required,Validators.min(1)],
+      policyId: ['', [Validators.required]],
       paymentId: ['', Validators.required],
-      createdAt: new FormControl(Date.now()),
+      createdAt: [Date.now()]
     });
     //credit card form control
-  this.addCreditCardForm = new FormGroup({
-    name: new FormControl('', [Validators.required]),
-    surname: new FormControl('', [Validators.required]),
-    cardNumber: new FormControl('', [
+  this.addCreditCardForm = this.formBuilder.group({
+    name:['', [Validators.required]],
+    surname: ['', [Validators.required]],
+    cardNumber: ['', [
       Validators.required,
       Validators.maxLength(16),
-    ]),
-    expDate: new FormControl('', [Validators.required]),
-    cvv: new FormControl('', [Validators.required, Validators.maxLength(4)]),
+    ]],
+    expDate: ['', [Validators.required]],
+    cvv: ['', [Validators.required, Validators.maxLength(4)]],
   });
   }
 
@@ -128,6 +129,7 @@ export class BuyPolicyComponent implements OnInit {
         console.log(data);
       });
       console.log(customerModel);
+      this.step++
     }
   }
 

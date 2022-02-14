@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <!--Adim 1-->
   <section *ngIf="step==1" class="row form-wrapper col-lg-6 col-xl-5 m-auto">
-    <h2>Adım 1</h2>
+    <h2>Adım 1/3</h2>
     <!--TC No Baslangic-->
     <form [formGroup]="customerRegisterForm">
       <div>
@@ -53,34 +53,29 @@
       <div class="divider-half">
         <!--E-posta Baslangic-->
         <div>
-          <div>
-            <label for="">E-posta</label>
-            <span class="text-danger mx-1">*</span>
-          </div>
-          <input type="text" id="email" formControlName="email">
-          <span
-            *ngIf="(customerRegisterForm.controls['email'].dirty || customerRegisterForm.controls['email'].touched )&& customerRegisterForm.hasError('required','email')"
-            class="text-danger">Lütfen e-posta adresinizi giriniz.</span>
-          <span *ngIf="customerRegisterForm.hasError('email','email')" class="text-danger">Lütfen geçerli bir e-posta
-            adresi giriniz.</span>
+          <label for="">E-posta</label>
+          <span class="text-danger mx-1">*</span>
         </div>
+        <input type="text" id="email" formControlName="email">
+        <span
+          *ngIf="(customerRegisterForm.controls['email'].dirty || customerRegisterForm.controls['email'].touched )&& customerRegisterForm.hasError('required','email')"
+          class="text-danger">Lütfen e-posta adresinizi giriniz.</span>
+        <span *ngIf="customerRegisterForm.hasError('email','email')" class="text-danger">Lütfen geçerli bir e-posta
+          adresi giriniz.</span>
         <!--E-posta Bitis-->
         <!--Telefon Baslangic-->
         <div>
-          <div>
-            <label for="">Telefon</label>
-            <span class="text-danger mx-1">*</span>
-          </div>
-          <input type="text" id="phone" formControlName="phone">
-          <span
-            *ngIf="(customerRegisterForm.controls['phone'].touched || customerRegisterForm.controls['phone'].dirty) && customerRegisterForm.hasError('required','phone')"
-            class="text-danger">Lütfen telefon numaranızı giriniz.</span>
-          <span *ngIf="customerRegisterForm.hasError('phone','pattern')" class="text-danger">Lütfen geçerli bir telefon
-            numarası giriniz.</span>
+          <label for="">Telefon</label>
+          <span class="text-danger mx-1">*</span>
         </div>
-        <!--Telefon Bitis-->
+        <input type="text" id="phone" formControlName="phone">
+        <span
+          *ngIf="(customerRegisterForm.controls['email'].dirty && customerRegisterForm.controls['phone'].touched || customerRegisterForm.controls['phone'].dirty) && customerRegisterForm.hasError('required','phone')"
+          class="text-danger">Lütfen telefon numaranızı giriniz.</span>
+        <span *ngIf="customerRegisterForm.hasError('phone','pattern')" class="text-danger">Lütfen geçerli bir telefon
+          numarası giriniz.</span>
       </div>
-      <!--E-posta ve telefon Bitis-->
+      <!--Telefon Bitis-->
       <!--Adres Baslangic-->
       <div>
         <div>
@@ -96,37 +91,34 @@
       <!--İl ve İlce Baslangic-->
       <div>
         <!--İl-->
-        <div class="divider-half">
-          <div>
-            <label for="">İl</label>
-            <span class="text-danger mx-1">*</span>
-          </div>
-          <select name="" id="" formControlName="cityId">
-            <option value="" disabled id="cityId">--Seçiniz--</option>
-            <option value="{{city.cityId}}" *ngFor="let city of cities" id="cityId">
-              {{city.cityName}}</option>
-          </select>
-          <br>
-          <span
-            *ngIf="(customerRegisterForm.controls['cityId'].touched || customerRegisterForm.controls['cityId'].dirty)&&customerRegisterForm.hasError('required','cityId')"
-            class="text-danger">Lütfen il seçiniz.</span>
-        </div>
-        <!--İlce-->
         <div>
-          <div>
-            <label for="">İlçe</label>
-            <span class="text-danger mx-1">*</span>
-          </div>
-          <select name="" id="" formControlName="regionId">
-            <option value="" disabled id="cityId">--Seçiniz--</option>
-            <option value="{{x.regionId}}" *ngFor="let x of regions" id="regionId">
-              {{x.regionName}}</option>
-          </select>
-          <span
-            *ngIf="(customerRegisterForm.controls['regionId'].touched || customerRegisterForm.controls['regionId'].dirty)&&customerRegisterForm.hasError('required','regionId')"
-            class="text-danger">Lütfen ilçe seçiniz.</span>
+          <label for="">İl</label>
+          <span class="text-danger mx-1">*</span>
         </div>
+        <select name="" id="" formControlName="cityId">
+          <option value="" disabled id="cityId">--Seçiniz--</option>
+          <option value="{{city.cityId}}" *ngFor="let city of cities" id="cityId">
+            {{city.cityName}}</option>
+        </select>
+        <br>
+        <span
+          *ngIf="(customerRegisterForm.controls['cityId'].touched || customerRegisterForm.controls['cityId'].dirty)&&customerRegisterForm.hasError('required','cityId')"
+          class="text-danger">Lütfen il seçiniz.</span>
       </div>
+      <!--İlce-->
+      <div>
+        <label for="">İlçe</label>
+        <span class="text-danger mx-1">*</span>
+      </div>
+      <select name="" id="" formControlName="regionId">
+        <option value="" disabled id="cityId">--Seçiniz--</option>
+        <option value="{{x.regionId}}" *ngFor="let x of regions" id="regionId">
+          {{x.regionName}}</option>
+      </select>
+      <br>
+      <span
+        *ngIf="(customerRegisterForm.controls['regionId'].touched || customerRegisterForm.controls['regionId'].dirty)&&customerRegisterForm.hasError('required','regionId')"
+        class="text-danger">Lütfen ilçe seçiniz.</span>
       <!--İl ve İlce Bitis-->
       <!--Cinsiyet-->
       <div>
@@ -149,110 +141,122 @@
         </label>
         <br>
         <span
-            *ngIf="customerRegisterForm.hasError('required','gender')"
-            class="text-danger">Lütfen cinsiyetinizi seçiniz.</span>
+          *ngIf="customerRegisterForm.controls['gender'].dirty && customerRegisterForm.hasError('required','gender')"
+          class="text-danger">Lütfen cinsiyetinizi seçiniz.</span>
       </div>
-      <div class="divider">
-        <!--Boy Baslangic-->
+      <!--Boy Baslangic-->
+      <div>
         <div>
-          <div>
-            <label for="">Boy (cm)</label>
-            <span class="text-danger mx-1">*</span>
-          </div>
-          <input type="number" id="height" formControlName="height">
-          <span
-            *ngIf="(customerRegisterForm.controls['height'].touched || customerRegisterForm.controls['height'].dirty)&&customerRegisterForm.hasError('required','height')"
-            class="text-danger">Lütfen boyunuzu giriniz.</span>
+          <label for="">Boy (cm)</label>
+          <span class="text-danger mx-1">*</span>
         </div>
-        <!--Kilo Baslangic-->
+        <input type="number" id="height" formControlName="height">
+        <span
+          *ngIf="(customerRegisterForm.controls['height'].touched || customerRegisterForm.controls['height'].dirty)&&customerRegisterForm.hasError('required','height')"
+          class="text-danger">Lütfen boyunuzu giriniz.</span>
+      </div>
+      <!--Kilo Baslangic-->
+      <div>
         <div>
-          <div>
-            <label for="">Kilo (kg)</label>
-            <span class="text-danger mx-1">*</span>
-          </div>
-          <input type="number" id="weight" formControlName="weight">
-          <span
-            *ngIf="(customerRegisterForm.controls['weight'].touched || customerRegisterForm.controls['weight'].dirty)&&customerRegisterForm.hasError('required','weight')"
-            class="text-danger">Lütfen kilonuzu giriniz.</span>
+          <label for="">Kilo (kg)</label>
+          <span class="text-danger mx-1">*</span>
         </div>
+        <input type="number" id="weight" formControlName="weight">
+        <span
+          *ngIf="(customerRegisterForm.controls['weight'].touched || customerRegisterForm.controls['weight'].dirty)&&customerRegisterForm.hasError('required','weight')"
+          class="text-danger">Lütfen kilonuzu giriniz.</span>
       </div>
     </form>
     <!--İleri-->
-    <div class="btn-container">
-      <div class="btn-next">
-        <button class="btn-navigator" (click)="increaseStep()">
-          <div>
-            İleri<fa-icon class="next" [icon]="nextArrow"></fa-icon>
-          </div>
-        </button>
-      </div>
+    <div class="btn-first-step-container">
+      <button class="btn-navigator" (click)="registerCustomer()">
+        <div>
+          İleri<fa-icon class="next" [icon]="nextArrow"></fa-icon>
+        </div>
+      </button>
     </div>
   </section>
   <!--Adim 2-->
   <section *ngIf="step==2" class="row form-wrapper col-lg-9 col-xl-6 m-auto">
-    <h2>Adım 2</h2>
+    <h2>Adım 2/3</h2>
     <p>Satın almak istediğiniz paketi ve ödeme türünü seçiniz.</p>
     <form [formGroup]="addOrderForm">
       <div class="policy-card__container">
         <div class="policy-card">
-          <input type="radio" name="policy" value="1">
+          <input type="radio" formControlName="policyId" name="policyId" value="1">
           <p class="policy-title">Yatarak Tedavi</p>
           <p class="policy-price">500 &#8378;</p>
         </div>
         <div class="policy-card">
-          <input type="radio" name="policy" value="2">
+          <input type="radio" formControlName="policyId" name="policyId" value="2">
           <p class="policy-title">Ayakta Tedavi</p>
           <p class="policy-price">1000 &#8378;</p>
         </div>
         <div class="policy-card">
-          <input type="radio" name="policy" value="3">
+          <input type="radio" formControlName="policyId" name="policyId" value="3">
           <p class="policy-title">Yatarak+Ayakta Tedavi</p>
           <p class="policy-price">1300 &#8378;</p>
         </div>
       </div>
+      <span *ngIf="addOrderForm.controls['paymentId'].dirty && addOrderForm.hasError('required','policyId')"
+        class="text-danger d-flex align-items-center justify-content-center">Lütfen satın almak istediğiniz poliçeyi
+        seçiniz.</span>
       <div class="policy">
-        <select name="" id="">
-          <option value="">--Seçiniz--</option>
-          <option *ngFor="let x of paymentTypes" value="{{x.paymentId}}">{{x.title}}</option>
+        <select formControlName="paymentId">
+          <option value="" id="paymentId" disabled>--Seçiniz--</option>
+          <option id="paymentId" *ngFor="let x of paymentTypes" value="{{x.paymentId}}">{{x.title}}</option>
         </select>
       </div>
+      <span
+        *ngIf="(addOrderForm.controls['paymentId'].touched || addOrderForm.controls['paymentId'].dirty)&& addOrderForm.hasError('required','paymentId')"
+        class="text-danger">Lütfen bir ödeme türü seçiniz.</span>
     </form>
     <br />
     <div class="btn-container">
       <div>
-        <button class="btn-navigator" (click)="increaseStep()">
+        <button class="btn-navigator" (click)="decreaseStep()">
           <div class="btn-content">
             <fa-icon class="prev" [icon]="prevArrow"></fa-icon>Geri
           </div>
         </button>
       </div>
-      <span></span>
-      <div *ngIf="isLoading" class="spinner-grow" style="width: 3rem; height: 3rem; margin: auto;" role="status">
-        <span class="sr-only">Loading...</span>
-      </div>
-      <div>
-        <button class="btn-navigator">
-          <div>
-            İleri<fa-icon class="next" (click)="increaseStep()" [icon]="nextArrow"></fa-icon>
-          </div>
-        </button>
-      </div>
+      <button class="btn-navigator">
+        <div>
+          İleri<fa-icon class="next" (click)="increaseStep()" [icon]="nextArrow"></fa-icon>
+        </div>
+      </button>
     </div>
   </section>
   <!--Adim 3-->
-  <div *ngIf="step==3" class="row form-wrapper col-lg-6 m-auto">
-    <h2>Adım 3 Ödeme</h2>
+  <section *ngIf="step==3" class="row form-wrapper col-lg-6 m-auto">
+    <h2>Adım 3/3</h2>
+    <br />
+    <!--Kart No-->
+    <form action="">
+      <label for="">Kart No</label>
+      <input type="number">
+      <label for="">Kart Sahibinin Adı</label>
+      <input type="text">
+      <label for="">Kart Sahibinin Soyadı</label>
+      <input type="text">
+      <div class="divider">
+        <div class="display-flex flex-direction-column">
+          <label for="">Son kullanma tarihi</label>
+          <input class="divider-left" type="date">
+        </div>
+        <div>
+          <label for="">CVV</label>
+          <br>
+          <input type="number">
+        </div>
+      </div>
+    </form>
     <div class="btn-container">
-      <div>
-        <button class="btn-navigator">
-          <div>
-            <fa-icon class="prev" [icon]="prevArrow"></fa-icon>Geri
-          </div>
-        </button>
-      </div>
-      <div *ngIf="isLoading" class="spinner-grow" style="width: 3rem; height: 3rem; margin: auto;" role="status">
-        <span class="sr-only">Loading...</span>
-      </div>
+      <button (click)="decreaseStep()" class="btn-navigator">
+        <div>
+          <fa-icon class="prev" [icon]="prevArrow"></fa-icon>Geri
+        </div>
+      </button>
       <div>
         <button class="btn-success" (click)="completeAllSteps()">
           <div>
@@ -261,9 +265,9 @@
         </button>
       </div>
     </div>
-  </div>
+  </section>
   <!--Adim 4-->
-  <div *ngIf="step==4" class="row form-wrapper col-lg-6 m-auto">
+  <section *ngIf="step==4" class="row form-wrapper col-lg-6 m-auto">
     <h2 style="text-align: center;">Teşekkürler</h2>
     <div class="thanks-container ">
       <fa-icon class="text-success icon-success" [icon]="checkIcon"></fa-icon>
@@ -273,5 +277,5 @@
         <button class="btn-thanks">Ana Sayfaya Dön</button>
       </a>
     </div>
-  </div>
+  </section>
 </div>
