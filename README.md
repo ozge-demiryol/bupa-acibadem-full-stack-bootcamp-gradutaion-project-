@@ -21,6 +21,7 @@ This repository contains the graduation project of [Patika.dev](https://patika.d
 ### Customer Screen
 
 ### Administration Screen
+
 ![](./screenshots/admin-home.png)
 
 ## Used Technologies

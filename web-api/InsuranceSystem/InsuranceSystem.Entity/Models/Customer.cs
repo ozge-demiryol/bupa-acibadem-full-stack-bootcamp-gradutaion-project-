@@ -10,10 +10,10 @@ namespace InsuranceSystem.Entity.Models
 {
     public partial class Customer : EntityBase
     {
-        public Customer()
-        {
-            Orders = new HashSet<Order>();
-        }
+        //public Customer()
+        //{
+        //    Orders = new HashSet<Order>();
+        //}
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -35,11 +35,11 @@ namespace InsuranceSystem.Entity.Models
         public DateTime BirthDate { get; set; }
 
         [MaxLength(100)]
-        [RegularExpression(@" ^ ([\w\.\-] +)@([\w\-] +)((\.(\w){2, 3})+)$", ErrorMessage = "Please type a valid email address.")]
+        //[RegularExpression(@" ^ ([\w\.\-] +)@([\w\-] +)((\.(\w){2, 3})+)$", ErrorMessage = "Please type a valid email address.")]
         [Required(ErrorMessage = "Email is required")]
         public string Email { get; set; }
 
-        [RegularExpression(@"^(05(\d{9}))$", ErrorMessage = "Please type a valid phone number.")] //05xxxxxxxxx telefon numarasi kontrolu
+        //[RegularExpression(@"^(05(\d{9}))$", ErrorMessage = "Please type a valid phone number.")] //05xxxxxxxxx telefon numarasi kontrolu
         [Required(ErrorMessage = "Phone is required")]
         public string Phone { get; set; }
 
